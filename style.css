@@ -22,7 +22,8 @@ body {
     grid-template-rows: 1fr 1fr 1fr;
     place-items: center;
     background: #ffc;
-    gap: 16px
+    gap: 16px;
+    box-shadow: 3px 5px 3px 3px grey;
 
 }
 
