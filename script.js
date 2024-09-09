@@ -46,11 +46,20 @@ function addCard(book, index) {
     let card = document.createElement("div")
     card.classList.add("card")
     container.appendChild(card)
-    card.innerHTML = makeCardContent(book)
+
+    let cardContent = document.createElement("div");
+    cardContent.classList.add("cardContent")
+    cardContent.innerHTML = makeCardContent(book)
+
+    card.appendChild(cardContent)
+
+    let cardBtnContainer = document.createElement("div");
+    cardBtnContainer.classList.add("cardBtnContainer")
+    card.appendChild(cardBtnContainer)
 
     let removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
-    card.appendChild(removeBtn)
+    cardBtnContainer.appendChild(removeBtn)
     removeBtn.addEventListener("click", () => {
 
         removeBook(index);
@@ -59,7 +68,7 @@ function addCard(book, index) {
 
     let readBtn = document.createElement("button");
     readBtn.textContent = "Read";
-    card.appendChild(readBtn)
+    cardBtnContainer.appendChild(readBtn)
     readBtn.addEventListener("click", () => {
 
 

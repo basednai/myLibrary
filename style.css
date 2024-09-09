@@ -11,16 +11,19 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 2rem;
+    justify-items: center;
 }
 
 .card {
     padding: 20px;
-    height: 200px;
-
+    width: 80%;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     place-content: center;
     text-align: center;
     background: #ffc;
+    gap: 16px
 
 }
 
@@ -38,6 +41,23 @@ body {
 }
 
 .formInput {
+    display: flex;
     flex: 1;
     margin-left: .5rem;
+}
+
+.formContainer input[type="text"] {
+    margin-left: 5px;
+}
+
+.cardBtnContainer {
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem
+}
+
+.cardContent {
+    grid-row: 2;
 }
