@@ -28,6 +28,10 @@ function displayBooks() {
     });
 }
 
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
+}
+
 function addBook(book) {
 
     myLibrary.push(book)
@@ -72,9 +76,7 @@ function addCard(book, index) {
     readBtn.addEventListener("click", () => {
 
 
-        book.read = !book.read
-        console.log(book.read);
-
+        book.toggleRead()
         displayBooks()
     })
 }
@@ -92,11 +94,11 @@ function clearInputs(...elem) {
 };
 
 function read2bool(value) {
-if (value == "true")
-    return true
-else if (value == "false")
-    return false
-else return
+    if (value == "true")
+        return true
+    else if (value == "false")
+        return false
+    else return
 }
 
 newBookBtn.addEventListener("click", () => {
@@ -110,15 +112,25 @@ submitBtn.addEventListener("click", () => {
     let author = document.querySelector("#author")
     let read = document.querySelector("input[name=read]:checked")
 
+    try {
+        let newBook = new Book(title.value, author.value, read2bool(read.value));
 
-    let newBook = new Book(title.value, author.value, read2bool(read.value));
+        addBook(newBook)
+        displayBooks()
 
-    addBook(newBook)
-    displayBooks()
+    } catch (error) {
+        console.log(error);
+
+    }
 
     //clear inputs
     clearInputs(title, author);
-    read.checked = false;
+    try {
+        read.checked = false;
+    } catch (error) {
+        console.log(error);
+
+    }
     // hide form
     hideElement(formContainer, submitBtn)
     showElement(newBookBtn, "block")

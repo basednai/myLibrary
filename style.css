@@ -61,3 +61,9 @@ body {
 .cardContent {
     grid-row: 2;
 }
+
+.header {
+    margin: 1rem;
+    font-size: 40px;
+    font-weight: bolder;
+}
