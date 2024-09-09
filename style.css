@@ -20,8 +20,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    place-content: center;
-    text-align: center;
+    place-items: center;
     background: #ffc;
     gap: 16px
 
@@ -60,6 +59,7 @@ body {
 
 .cardContent {
     grid-row: 2;
+    /* text-align: left; */
 }
 
 .header {

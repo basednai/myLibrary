@@ -16,9 +16,9 @@ let formContainer = document.querySelector(".formContainer");
 let newBookBtn = document.querySelector(".btnContainer");
 let submitBtn = document.querySelector(".submitBtn")
 
-let book1 = new Book("Percy Jackson and the Lightning Thief", "Rick Riordan", true);
-let book2 = new Book("Harry Potter", "JK Rowling", true);
-let book3 = new Book("Alex Rider", "Unknown", false);
+let book1 = new Book("Sample Book 1", "Sample Author 1", true);
+let book2 = new Book("Sample Book 2", "Sample Author 2", true);
+let book3 = new Book("Sample Book 3", "Sample Author 3", false);
 myLibrary.push(book1, book2, book3);
 
 function displayBooks() {
@@ -43,7 +43,7 @@ function removeBook(index) {
 }
 
 function makeCardContent(book) {
-    return `${book.title} <br> ${book.author} <br> ${(book.read == true) ? "Read" : "Not Read"}`
+    return `Title: <strong>${book.title}</strong> <br> Author: ${book.author} <br> Read: ${(book.read == true) ? "Yes" : "No"}`
 }
 
 function addCard(book, index) {
