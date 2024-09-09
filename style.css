@@ -1,0 +1,43 @@
+body {
+    display: grid;
+    justify-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.card {
+    padding: 20px;
+    height: 200px;
+
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: #ffc;
+
+}
+
+.newBook {
+    width: 80%;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formInput {
+    flex: 1;
+    margin-left: .5rem;
+}
